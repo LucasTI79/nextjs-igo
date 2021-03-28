@@ -1,3 +1,145 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .bg-igo-400 {
+    background-color: #006064;
+  },
+  .bg-igo-500 {
+    background-color: #2aa2b0;
+  },
+  .bg-igo-600 {
+    background-color: #006064;
+  }
+  .gm-style {
+    font: 400 11px Roboto, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+  }
+  .gm-style .gm-style-iw {
+    font-weight: 300;
+    font-size: 13px;
+    overflow: hidden;
+  }
+    .gm-style .gm-style-iw-a {
+      position: absolute;
+      width: 9999px;
+      height: 0;
+  }
+    .gm-style .gm-style-iw-c {
+      position: absolute;
+      box-sizing: border-box;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      transform: translate(-50%,-100%);
+      background-color: white;
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 2px 7px 1px rgba(0,0,0,0.3);
+  }
+  .gm-style .gm-style-iw-d {
+    box-sizing: border-box;
+    overflow: auto;
+  }
+
+  .gm-style .gm-style-iw-t {
+    position: absolute;
+    width: 100%;
+  }
+  .poi-info-window {
+    cursor: default;
+  }
+  .poi-info-window .title {
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .poi-info-window .full-width {
+    width: 180px;
+  }
+  .poi-info-window .address {
+    margin-top: 2px;
+    text-align:'center';
+    color: #555;
+  }
+  .poi-info-window div, .poi-info-window a {
+    color: #333;
+    font-family: Roboto,Arial;
+    font-size: 13px;
+    background-color: white;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  .poi-info-window .view-link, .poi-info-window a:visited {
+    color: #427fed;
+  }
+
+  .gm-ui-hover-effect {
+      opacity: .6;
+  }
+
+  .gm-style-iw .gm-style-iw-c::after {
+    background: linear-gradient(45deg,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 51%,rgba(255,255,255,0) 100%);
+    box-shadow: -2px 2px 2px 0 rgba(178,178,178,.4);
+    content: "";
+    height: 15px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    width: 15px;
+  }
+  .h-38 {
+    height: 38rem;
+  }
+
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+
+  .scroll-snap-x {
+    scroll-snap-type:x mandatory;
+    --webkit-overflw-scrolling:touch;
+  }
+
+  .scroll-snap-align-start {
+    scroll-snap-align:start;
+  }
+
+  .scroll-smooth {
+    scroll-behavior:smooth;
+  }
+  .vh-10{
+    height: 10vh;
+  }
+  .vh-20{
+    height: 20vh;
+  }
+  .vh-30{
+    height: 30vh;
+  }
+  .vh-40{
+    height: 40vh;
+  }
+
+  .vh-50{
+    height: 50vh;
+  }
+  .vh-60{
+    height: 60vh;
+  }
+  .vh-70{
+    height: 70vh;
+  }
+  .vh-80{
+    height: 80vh;
+  }
+  .vh-90{
+    height: 90vh;
+  }
+
+}
