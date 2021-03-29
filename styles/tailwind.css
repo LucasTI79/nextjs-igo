@@ -4,10 +4,10 @@
 
 @layer utilities {
   .bg-igo-400 {
-    background-color: #006064;
-  },
-  .bg-igo-500 {
     background-color: #2aa2b0;
+  }
+  .bg-igo-500 {
+    background-color:  #17a2b8;
   },
   .bg-igo-600 {
     background-color: #006064;
@@ -97,10 +97,6 @@
     height: 38rem;
   }
 
-  *, ::after, ::before {
-    box-sizing: border-box;
-  }
-
   .scroll-snap-x {
     scroll-snap-type:x mandatory;
     --webkit-overflw-scrolling:touch;
@@ -116,12 +112,27 @@
   .vh-10{
     height: 10vh;
   }
+
+  .vh-15{
+    height: 15vh;
+  }
+
   .vh-20{
     height: 20vh;
   }
+
+  .vh-25{
+    height: 25vh;
+  }
+
   .vh-30{
     height: 30vh;
   }
+
+  .vh-35{
+    height: 35vh;
+  }
+
   .vh-40{
     height: 40vh;
   }

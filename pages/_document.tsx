@@ -21,6 +21,7 @@ class MyDocument extends Document {
             integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY="
             crossOrigin="anonymous"
           />
+          <link rel="shortcut icon" href="../public/favicon.ico"/>
         </Head>
         <body>
           <Main />

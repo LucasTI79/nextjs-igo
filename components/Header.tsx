@@ -16,34 +16,32 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row md:justify-between ">
+    <div className="flex flex-col md:flex-row md:justify-between">
       <header className="flex justify-between md:flex-row md:justify-between py-2 md:py-4">
-            <div onClick={handleClick} className="md:hidden relative duration-1000">
-                  {
-                    isActive ?
-                    (
-                      <svg viewBox="0 0 40 40" width='36' height="36" >
-                        <path stroke="black" strokeLinecap="round" strokeWidth="5" d="M 10,10 L 30,30 M 30,10 L 10,30" />
-                      </svg>
-                    )
-                    :
-                    (
+          <div onClick={handleClick} className="md:hidden">
+            {
+              isActive ?
+              (
+                <svg viewBox="0 0 40 40" width='36' height="36" >
+                  <path stroke="black" strokeLinecap="round" strokeWidth="5" d="M 10,10 L 30,30 M 30,10 L 10,30" />
+                </svg>
+              )
+              :
+              (
 
-                      <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36">
-                        <path d="M0 0h36v36H0z" fill="none"/>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                      </svg>
-                    )
-                  }
+                <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36">
+                  <path d="M0 0h36v36H0z" fill="none"/>
+                  <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+              )
+            }
+          </div>
 
-                </div>
-              <div className="">
-                <Link href={'/'}>
-                  <Image src="/logocel.png" width={36} height={36} />
-                </Link>
-              </div>
-
-
+          <div className="">
+            <Link href={'/'}>
+              <Image src="/logocel.png" width={36} height={36} />
+            </Link>
+          </div>
 
           </header>
           <motion.div

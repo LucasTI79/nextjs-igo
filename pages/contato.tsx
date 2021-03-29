@@ -1,5 +1,5 @@
 import { motion, Variants } from 'framer-motion'
-import Link from 'next/link'
+import Image from 'next/image'
 import { getMaxListeners } from 'process'
 import React from 'react'
 
@@ -22,8 +22,13 @@ const Contato: React.FC = () => {
     }
   }
   return (
+    <>
+    <div className="vh-10 flex flex-row justify-center items-center bg-igo-400 mb-2">
+      <Image width={24} height={24} src={'/svg/status/icons8-rolagem.svg'} />
+      <h2 className="text-xl md:text-2xl sm:text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">CONTATO</h2>
+    </div>
     <motion.div
-      className="h-screen flex items-center justify-center"
+      className="h-screen flex items-center justify-center mb-2"
       style={{backgroundColor:'#edf2f7'}}
       transition={{
         delay: 1
@@ -95,6 +100,7 @@ const Contato: React.FC = () => {
 
       </div>
     </motion.div>
+  </>
   )
 }
 

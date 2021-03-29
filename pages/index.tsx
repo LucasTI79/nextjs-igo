@@ -1,7 +1,8 @@
-import Link from 'next/link'
+import Image from 'next/image'
 import { motion, Variants } from 'framer-motion'
 import GoogleMapReact from 'google-map-react';
 import ReactCardCarousel from "react-card-carousel";
+import Link from 'next/link';
 interface CardProps {
   href: string
   imgSrc: string
@@ -35,6 +36,10 @@ interface Marker {
   text: string,
   lat: number,
   lng: number
+}
+interface CardProblems {
+  text?:string,
+  children?:any
 }
 
 const defaultProps = {
@@ -97,6 +102,48 @@ const AnyReactComponent: React.FC<Marker> = ({ lat, lng, text }) => (
   </div>
 )
 
+const CardProblems: React.FC<CardProblems> = ({ text, children }) => (
+  <div style={{
+    height: "200px",
+    width: "200px",
+    paddingTop: "20px",
+    textAlign: "center",
+    background: "#52C0F5",
+    color: "#FFF",
+    fontFamily: "sans-serif",
+    fontSize: "14px",
+    textTransform: "uppercase",
+    borderRadius: "10px",
+    boxSizing: "border-box"
+}}>{children}</div>
+)
+
+interface CardProps {
+  describe?: string,
+  imgSrc:string,
+  href:string
+}
+
+const Card: React.FC<CardProps> = ({ describe, imgSrc, href }) => (
+  <Link href={href}>
+    <a href="">
+      <div className="rounded-md border-2 border-white md:border-0 p-3">
+        <div className="group relative">
+          <img className="h-full w-full rounded-t-lg" src={imgSrc} />
+        </div>
+        <div className="p-5 rounded-b" style={{backgroundColor:'#77cec3'}}>
+          <h2 className="text-white text-lg font-bold">{describe}</h2>
+
+            <a className="text-white p-2 rounded font-medium hover:bg-white hover:rounded hover:text-gray-700">
+              Saiba mais
+            </a>
+
+        </div>
+      </div>
+    </a>
+  </Link>
+)
+
 export default function Home() {
   const handleWhell = e => {
     if(e.deltaY > 0) {
@@ -116,8 +163,97 @@ export default function Home() {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.5 }}
     >
-   <h2 className="text-xl flex flex-row justify-center mb-5">Endereço</h2>
-    <div className="w-full h-96 md:h-38 mb-5">
+    <div className="vh-10 flex flex-row justify-center items-center bg-igo-400 mb-2">
+          <Image width={24} height={24} src={'/svg/dental/037-tooth.svg'} />
+          <h2 className="md:text-2xl text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">DICAS</h2>
+    </div>
+    <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Card href={'/articles/limpeza'} describe={'Limpeza dos dentes'} imgSrc={'/especialities/endodontia.jpg'}/>
+          <Card href={'/articles/aparelho'} describe={'Importância do aparelho'} imgSrc={'/especialities/ortodontia.jpg'}/>
+          <Card href={'/articles/protese'} describe={'Importância das próteses'} imgSrc={'/especialities/protese.jpg'}/>
+          {/* <Card href={'/articles/protese'} describe={'Dente quebrou e agora?'} imgSrc={'/especialities/protese.jpg'}/>
+          <Card href={'/articles/protese'} describe={'Dentaduras'} imgSrc={'/especialities/protese.jpg'}/>
+          <Card href={'/articles/protese'} describe={'Ida do bebê ao dentista'} imgSrc={'/especialities/pediatria.jpg'}/>
+          <Card href={'/articles/protese'} describe={'Como manter os dentes saudáveis'} imgSrc={'/especialities/protese.jpg'}/> */}
+        </section>
+    <div className="vh-10 flex flex-row justify-center items-center bg-igo-400 mb-2">
+          <Image width={24} height={24} src={'/svg/dental/007-tooth.svg'} />
+          <h2 className="md:text-2xl text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">PRINCIPAIS PROBLEMAS</h2>
+    </div>
+    <div className="vh-40 flex flex-row justify-center items-center">
+      <div
+        style={{position: "relative",
+                height: "60vh",
+                width: "100%",
+                display: "flex",
+                flex: 1,
+                justifyContent: "center",
+                alignItems: "middle"}}
+              >
+        <ReactCardCarousel spread={'wide'} autoplay={true} autoplay_speed={3500}>
+          <CardProblems>
+            <div>
+              <h1 className="text-xl font-bold mb-3">Sensibilidade</h1>
+              <p className="font-medium">Alimentos ácidos</p>
+              <p className="font-medium">Bebidas quentes</p>
+              <p className="font-medium">Gelado</p>
+              <p className="font-medium">Doces</p>
+            </div>
+          </CardProblems>
+          <CardProblems>
+            <div>
+              <h1 className="text-xl font-bold mb-3">Bruxismo</h1>
+              <p className="font-medium">Alterações de humor</p>
+              <p className="font-medium">Estresse</p>
+              <p className="font-medium">ansiedade</p>
+              <p className="font-medium">Genética</p>
+            </div>
+          </CardProblems>
+          <CardProblems>
+            <div>
+              <h1 className="text-xl font-bold mb-3">Dentes Tortos</h1>
+              <p className="font-medium">Morder objetos</p>
+              <p className="font-medium">Respiração</p>
+              <p className="font-medium">Bruxismo</p>
+              <p className="font-medium">Genética</p>
+            </div>
+          </CardProblems>
+          <CardProblems>
+            <div>
+              <h1 className="text-xl font-bold mb-3">Cáries</h1>
+              <p className="font-medium">Mal uso do fio dental</p>
+              <p className="font-medium">Excesso de açucar</p>
+              <p className="font-medium">Genética</p>
+            </div>
+          </CardProblems>
+          <CardProblems>
+            <div>
+              <h1 className="text-xl font-bold mb-3">Mal hálito</h1>
+              <p className="font-medium">Problemas de garganta</p>
+              <p className="font-medium">Escovação irregular</p>
+              <p className="font-medium">Doenças de gengiva</p>
+              <p className="font-medium">Falta de fibras</p>
+            </div>
+          </CardProblems>
+        </ReactCardCarousel>
+      </div>
+
+    </div>
+    <div className="vh-10 flex flex-row justify-center items-center bg-igo-400 mb-2">
+          <Image width={24} height={24} src={'/svg/emoctions/021-happy.svg'} />
+          <h2 className="md:text-2xl text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">VENHA SORRIR COM A GENTE</h2>
+    </div>
+    <div className="grid grid-cols-3 grid-row-1 gap-2 mb-2">
+      <Image width={'w-1/3'} height={'h-full'} sizes={"responsive"} src={'/clinic/consultorio.jpeg'}/>
+      <Image width={'w-1/3'} height={'h-full'} sizes={"responsive"} src={'/clinic/recepcao.jpeg'}/>
+      <Image width={'w-1/3'} height={'h-full'} sizes={"responsive"} src={'/clinic/vendas.jpeg'}/>
+    </div>
+    <div className="vh-10 flex flex-row justify-center items-center bg-igo-400 mb-2">
+          <Image width={24} height={24} src={'/svg/redes/007-periscope.svg'} />
+          <h2 className="text-xl md:text-2xl sm:text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">NOSSA LOCALIZAÇÃO</h2>
+    </div>
+
+    <div className="w-full h-96 mb-2">
          <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyAW-BJWiOlMu_uwsn9PEACHqvY6pmrs1hY' }}
         defaultCenter={defaultProps.center}
@@ -131,31 +267,6 @@ export default function Home() {
         />
       </GoogleMapReact>
     </div>
-    <h2 className="flex flex-row justify-center text-xl ">Venha sorrir com a gente</h2>
-    <div id="items-wrapper" className="w-full vh-30">
-      <div className="flex flex-row justify-around">
-      </div>
-      <div
-        id="items"
-        className="flex flex-row overflow-x-hidden"
-        >
-        <div className="item flex-none w-1/3 h-full object-cover scroll-snap-align-start pointer-events-none"><img className="w-full h-full" src="https://unsplash.it/1600/400?image=950"/></div>
-        <div className="item flex-none w-1/3 h-full object-cover scroll-snap-align-start pointer-events-none"><img className="w-full h-full" src="https://unsplash.it/1600/400?image=950"/></div>
-        <div className="item flex-none w-1/3 h-full object-cover scroll-snap-align-start pointer-events-none"><img className="w-full h-full" src="https://unsplash.it/1600/400?image=950"/></div>
-      </div>
-    </div>
-    <div>
-      <div style={CONTAINER_STYLE}>
-        <ReactCardCarousel spread={'wide'} autoplay={true} autoplay_speed={2500}>
-          <div style={CARD_STYLE}>First Card</div>
-          <div style={CARD_STYLE}>Second Card</div>
-          <div style={CARD_STYLE}>Third Card</div>
-          <div style={CARD_STYLE}>Fourth Card</div>
-          <div style={CARD_STYLE}>Fifth Card</div>
-        </ReactCardCarousel>
-      </div>
-    </div>
-
     </motion.div>
   )
 }

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import Image from 'next/image'
 
 const Sobre: React.FC = () => {
   return (
@@ -11,7 +11,10 @@ const Sobre: React.FC = () => {
         layoutId={'sobre'}
       >
 
-        <h1 className="flex flex-row justify-center mb-5 text-2xl">Sobre nós</h1>
+    <div className="vh-10 flex flex-row justify-center items-center bg-igo-400 mb-2">
+      <Image width={24} height={24} src={'/svg/status/icons8-informações.svg'} />
+      <h2 className="text-xl md:text-2xl sm:text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">SOBRE NÓS</h2>
+    </div>
 
         <p>
 

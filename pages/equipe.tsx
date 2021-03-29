@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({ imgSrc, description }) => {
       />
 
       <div className="flex h-1/5 sm:h-1/5 justify-center  hover:h-2/5 items-center border-transparent">
-        <span>Dra Edilene Adorno</span>
+        <span>{description}</span>
       </div>
 
     </motion.div>
@@ -47,6 +47,10 @@ const Equipe: React.FC = () => {
       className=""
       layoutId={'equipe'}
       >
+      <div className="vh-15 flex flex-row justify-center items-center bg-igo-400 mb-2">
+        <Image width={24} height={24} src={'/svg/dental/008-dentist.svg'} />
+        <h2 className="text-2xl sm:text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">EQUIPE</h2>
+      </div>
         <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -55,37 +59,53 @@ const Equipe: React.FC = () => {
         className="grid grid-cols-1 md:grid-cols-3"
         >
           <Card
-            imgSrc={'/edi.jpg'}
-            description={'des'}
+            imgSrc={'/doctor/Carol.jpg'}
+            description={'Dra Carolina Calais'}
             />
           <Card
-            imgSrc={'/edi.jpg'}
-            description={'des'}
+            imgSrc={'/doctor/Dani.jpg'}
+            description={'Dra Danielle Matias'}
             />
           <Card
-            imgSrc={'/edi.jpg'}
-            description={'des'}
+            imgSrc={'/doctor/edi.jpg'}
+            description={'Dra Edilene Adorno'}
             />
           <Card
-            imgSrc={'/edi.jpg'}
-            description={'des'}
+            imgSrc={'/doctor/Fran.jpg'}
+            description={'Dra Francine Brito'}
             />
           <Card
-            imgSrc={'/edi.jpg'}
-            description={'des'}
+            imgSrc={'/doctor/Lud.jpg'}
+            description={'Dra Ludmila Koslovsky'}
             />
           <Card
-            imgSrc={'/edi.jpg'}
-            description={'des'}
+            imgSrc={'/doctor/Monique.jpg'}
+            description={'Dra Monique Dias'}
             />
           <Card
-            imgSrc={'/edi.jpg'}
-            description={'des'}
+            imgSrc={'/doctor/murilo.jpg'}
+            description={'Dra Murilo Francisco'}
             />
           <Card
-            imgSrc={'/edi.jpg'}
-            description={'des'}
+            imgSrc={'/doctor/Rita.jpg'}
+            description={'Dra Rita de Cássia'}
             />
+          <Card
+            imgSrc={'/doctor/Rodolfo.jpg'}
+            description={'Dra Rodolfo Thomé'}
+            />
+          <Card
+            imgSrc={'/doctor/Simone.jpg'}
+            description={'Simone Falkenburg'}
+            />
+          <Card
+            imgSrc={'/doctor/Tatiana.jpg'}
+            description={'Dra Tatiana Galindo'}
+          />
+          <Card
+            imgSrc={'/doctor/Tatiane.jpg'}
+            description={'Dra Tatiane Guedes'}
+          />
         </motion.div>
       </motion.div>
   )
