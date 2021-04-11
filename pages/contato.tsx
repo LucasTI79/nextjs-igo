@@ -1,6 +1,5 @@
 import { motion, Variants } from 'framer-motion'
 import Image from 'next/image'
-import { getMaxListeners } from 'process'
 import React from 'react'
 
 const Contato: React.FC = () => {
@@ -23,19 +22,21 @@ const Contato: React.FC = () => {
   }
   return (
     <>
-    <div className="vh-10 flex flex-row justify-center items-center bg-igo-400 mb-2">
-      <Image width={24} height={24} src={'/svg/status/icons8-rolagem.svg'} />
-      <h2 className="text-xl md:text-2xl sm:text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">CONTATO</h2>
-    </div>
     <motion.div
-      className="h-screen flex items-center justify-center mb-2"
-      style={{backgroundColor:'#edf2f7'}}
-      transition={{
-        delay: 1
-      }}
-      variants={variants}
-      initial="hidden"
-      animate="visible"
+      className="vh-10 flex flex-row justify-center items-center bg-igo-300 mb-2"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      >
+      <Image width={24} height={24} src={'/svg/redes/019-mail-white.svg'} />
+      <h2 className="text-xl md:text-2xl sm:text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">CONTATO</h2>
+    </motion.div>
+    <motion.div
+      className="vh-100 flex items-center justify-center mb-4 mt-4"
+      style={{backgroundColor:'#edf2f8'}}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.5 }}
       >
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col">
         <div className="-mx-3 md:flex mb-6">
@@ -44,7 +45,7 @@ const Contato: React.FC = () => {
               Nome Completo
             </label>
             <input
-              className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
+              className="appearance-none block border-solid w-full bg-grey-lighter text-grey-darker border-2 rounded py-3 px-4 mb-3"
               id="grid-first-name" type="text" placeholder="José da Silva" onChange={e => setName(e.target.value)}/>
           </div>
           <div className="md:w-1/2 px-3">
@@ -52,7 +53,7 @@ const Contato: React.FC = () => {
               Email
             </label>
             <input
-              className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+              className="appearance-none block w-full bg-grey-lighter text-grey-darker border-2 border-grey-lighter rounded py-3 px-4"
               id="grid-last-name" type="mail" placeholder="email@domain.com" onChange={e => setEmail(e.target.value)}/>
           </div>
         </div>
@@ -62,7 +63,7 @@ const Contato: React.FC = () => {
               Celular
             </label>
             <input
-              className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+              className="appearance-none block w-full bg-grey-lighter text-grey-darker border-2 border-grey-lighter rounded py-3 px-4"
               id="grid-city" type="tel" placeholder="(xx)xxxxx-xxxx" onChange={e => setPhone(e.target.value)}/>
           </div>
           <div className="md:w-1/2 px-3">
@@ -71,7 +72,7 @@ const Contato: React.FC = () => {
             </label>
             <div className="relative">
               <select
-                className="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
+                className="block appearance-none w-full bg-grey-lighter border-2 border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
                 id="grid-state"
                 onChange={e => setSubject(e.target.value)}
                 >
@@ -88,13 +89,16 @@ const Contato: React.FC = () => {
               Mensagem
             </label>
             <textarea
-              className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+              className="appearance-none block w-full bg-grey-lighter text-grey-darker border-2 border-grey-lighter rounded py-3 px-4"
               id="grid-last-name" placeholder="mensagem" onChange={e => setMessage(e.target.value)}/>
           </div>
         </div>
         <button>
-         <a href={`mailto:contato@igodonto.com.br?subject=${subject}&body=${message}`}>
-            Enviar mensagem
+          <a
+          className="flex flex-row justify-center"
+          href={`mailto:contato@igodonto.com.br?subject=${subject}&body=${message}`}>
+            <Image width={16} height={16} src={'/svg/redes/019-mail.svg'} />
+            <p className="ml-2">Enviar mensagem</p>
           </a>
         </button>
 

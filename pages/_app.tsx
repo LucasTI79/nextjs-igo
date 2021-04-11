@@ -1,4 +1,6 @@
 import { AnimateSharedLayout } from 'framer-motion'
+import React from 'react'
+import Head from 'next/head'
 
 import '../styles/tailwind.css'
 import '../styles/globals.css'
@@ -9,6 +11,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <AnimateSharedLayout>
       <Layout>
+        <Head>
+          <title>IGO | Instituto Galindo de Odontologia</title>
+        </Head>
         <Component {...pageProps} />
       </Layout>
     </AnimateSharedLayout>

@@ -47,7 +47,7 @@ const Equipe: React.FC = () => {
       className=""
       layoutId={'equipe'}
       >
-      <div className="vh-15 flex flex-row justify-center items-center bg-igo-400 mb-2">
+      <div className="vh-10 flex flex-row justify-center items-center bg-igo-300 mb-2">
         <Image width={24} height={24} src={'/svg/dental/008-dentist.svg'} />
         <h2 className="text-2xl sm:text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">EQUIPE</h2>
       </div>

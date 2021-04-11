@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="shortcut" href="/public/favicon.ico" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
@@ -21,7 +22,6 @@ class MyDocument extends Document {
             integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY="
             crossOrigin="anonymous"
           />
-          <link rel="shortcut icon" href="../public/favicon.ico"/>
         </Head>
         <body>
           <Main />

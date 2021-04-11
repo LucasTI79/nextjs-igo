@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer utilities {
+  .bg-igo-300 {
+    background-color: #26BFC7;
+  }
   .bg-igo-400 {
-    background-color: #2aa2b0;
+    background-color: #24BDBD;
   }
   .bg-igo-500 {
     background-color:  #17a2b8;

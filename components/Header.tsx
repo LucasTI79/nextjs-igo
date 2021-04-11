@@ -39,7 +39,9 @@ const Header: React.FC = () => {
 
           <div className="">
             <Link href={'/'}>
-              <Image src="/logocel.png" width={36} height={36} />
+              <a className="cursor-pointer">
+               <Image src="/logocel.png" width={36} height={36} />
+              </a>
             </Link>
           </div>
 
@@ -75,6 +77,24 @@ const Header: React.FC = () => {
                       <span>Equipe</span>
                     </a>
                   </Link>
+                  <Link href="/blog">
+
+                    <a
+                      className="flex md:inline px-3 py-2 rounded text-gray-400 hover:bg-gray-900 hover:text-white"
+                    >
+                      <span>Blog</span>
+                    </a>
+                  </Link>
+
+
+                    {/* <a
+                      target="_blank"
+                      href="https://app.simplesdental.com/simples/agenda"
+                      className="flex md:inline px-3 py-2 rounded text-gray-400 hover:bg-gray-900 hover:text-white"
+                    >
+                      <span>Simples</span>
+                    </a> */}
+
                   <Link href="/sobre">
 
                     <a

@@ -6,8 +6,23 @@ import Link from 'next/link';
 interface CardProps {
   href: string
   imgSrc: string
-  layoutId: string
 }
+interface Marker {
+  text: string,
+  lat: number,
+  lng: number
+}
+
+interface CardProps {
+  describe?: string,
+  imgSrc:string,
+  href:string
+}
+interface CardProblems {
+  text?:string,
+  children?:any
+}
+
 const CONTAINER_STYLE = {
     position: "relative",
     height: "60vh",
@@ -23,23 +38,13 @@ const CARD_STYLE = {
     width: "200px",
     paddingTop: "80px",
     textAlign: "center",
-    background: "#52C0F5",
+    background: "#17a2b8",
     color: "#FFF",
     fontFamily: "sans-serif",
     fontSize: "12px",
     textTransform: "uppercase",
     borderRadius: "10px",
     boxSizing: "border-box"
-}
-
-interface Marker {
-  text: string,
-  lat: number,
-  lng: number
-}
-interface CardProblems {
-  text?:string,
-  children?:any
 }
 
 const defaultProps = {
@@ -49,7 +54,6 @@ const defaultProps = {
   },
   zoom: 15
 };
-
 
 const variants: Variants = {
   hidden: { opacity: 0 },
@@ -63,7 +67,7 @@ const variants: Variants = {
   }
 }
 
-const AnyReactComponent: React.FC<Marker> = ({ lat, lng, text }) => (
+const MarkerReactComponent: React.FC<Marker> = ({ lat, lng, text }) => (
   <div className="gm-style-iw gm-style-iw-c " id="c">
     {/* style={{ maxWidth: 224, maxHeight: 253, minWidth:0}}> 14 16 */}
     <div className="gm-style-iw-d" id='d'>
@@ -92,7 +96,7 @@ const AnyReactComponent: React.FC<Marker> = ({ lat, lng, text }) => (
           </div>
           <div >
             <a target="_blank"
-              href="https://maps.google.com/maps?ll=-23.486136,-46.619019&amp;z=17&amp;t=m&amp;hl=pt-BR&amp;gl=US&amp;mapclient=apiv3&amp;cid=15563642099758796458">
+              href="https://goo.gl/maps/Avq5zG8sYjGeQxD19">
               <span>Visualize no Google Maps</span>
             </a>
           </div>
@@ -108,7 +112,7 @@ const CardProblems: React.FC<CardProblems> = ({ text, children }) => (
     width: "200px",
     paddingTop: "20px",
     textAlign: "center",
-    background: "#52C0F5",
+    background: "#24BDBD",
     color: "#FFF",
     fontFamily: "sans-serif",
     fontSize: "14px",
@@ -118,12 +122,6 @@ const CardProblems: React.FC<CardProblems> = ({ text, children }) => (
 }}>{children}</div>
 )
 
-interface CardProps {
-  describe?: string,
-  imgSrc:string,
-  href:string
-}
-
 const Card: React.FC<CardProps> = ({ describe, imgSrc, href }) => (
   <Link href={href}>
     <a href="">
@@ -131,7 +129,7 @@ const Card: React.FC<CardProps> = ({ describe, imgSrc, href }) => (
         <div className="group relative">
           <img className="h-full w-full rounded-t-lg" src={imgSrc} />
         </div>
-        <div className="p-5 rounded-b" style={{backgroundColor:'#77cec3'}}>
+        <div className="p-5 rounded-b bg-igo-400">
           <h2 className="text-white text-lg font-bold">{describe}</h2>
 
             <a className="text-white p-2 rounded font-medium hover:bg-white hover:rounded hover:text-gray-700">
@@ -163,7 +161,7 @@ export default function Home() {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.5 }}
     >
-    <div className="vh-10 flex flex-row justify-center items-center bg-igo-400 mb-2">
+    <div className="vh-10 flex flex-row justify-center items-center bg-igo-300 mb-2">
           <Image width={24} height={24} src={'/svg/dental/037-tooth.svg'} />
           <h2 className="md:text-2xl text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">DICAS</h2>
     </div>
@@ -176,19 +174,21 @@ export default function Home() {
           <Card href={'/articles/protese'} describe={'Ida do bebê ao dentista'} imgSrc={'/especialities/pediatria.jpg'}/>
           <Card href={'/articles/protese'} describe={'Como manter os dentes saudáveis'} imgSrc={'/especialities/protese.jpg'}/> */}
         </section>
-    <div className="vh-10 flex flex-row justify-center items-center bg-igo-400 mb-2">
+    <div className="vh-10 flex flex-row justify-center items-center bg-igo-300 mb-2">
           <Image width={24} height={24} src={'/svg/dental/007-tooth.svg'} />
           <h2 className="md:text-2xl text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">PRINCIPAIS PROBLEMAS</h2>
     </div>
     <div className="vh-40 flex flex-row justify-center items-center">
       <div
-        style={{position: "relative",
+        style={
+          {position: "relative",
                 height: "60vh",
                 width: "100%",
                 display: "flex",
                 flex: 1,
                 justifyContent: "center",
-                alignItems: "middle"}}
+                alignItems: "middle"}
+          }
               >
         <ReactCardCarousel spread={'wide'} autoplay={true} autoplay_speed={3500}>
           <CardProblems>
@@ -239,7 +239,7 @@ export default function Home() {
       </div>
 
     </div>
-    <div className="vh-10 flex flex-row justify-center items-center bg-igo-400 mb-2">
+    <div className="vh-10 flex flex-row justify-center items-center bg-igo-300 mb-2">
           <Image width={24} height={24} src={'/svg/emoctions/021-happy.svg'} />
           <h2 className="md:text-2xl text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">VENHA SORRIR COM A GENTE</h2>
     </div>
@@ -248,7 +248,7 @@ export default function Home() {
       <Image width={'w-1/3'} height={'h-full'} sizes={"responsive"} src={'/clinic/recepcao.jpeg'}/>
       <Image width={'w-1/3'} height={'h-full'} sizes={"responsive"} src={'/clinic/vendas.jpeg'}/>
     </div>
-    <div className="vh-10 flex flex-row justify-center items-center bg-igo-400 mb-2">
+    <div className="vh-10 flex flex-row justify-center items-center bg-igo-300 mb-2">
           <Image width={24} height={24} src={'/svg/redes/007-periscope.svg'} />
           <h2 className="text-xl md:text-2xl sm:text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">NOSSA LOCALIZAÇÃO</h2>
     </div>
@@ -258,12 +258,11 @@ export default function Home() {
         bootstrapURLKeys={{ key: 'AIzaSyAW-BJWiOlMu_uwsn9PEACHqvY6pmrs1hY' }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
-        className=""
       >
-        <AnyReactComponent
+        <MarkerReactComponent
           lat={-23.486450}
           lng={-46.619251}
-          text="My Marker"
+          text="Instituto Galindo de Odontologia"
         />
       </GoogleMapReact>
     </div>
