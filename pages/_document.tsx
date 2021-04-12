@@ -34,7 +34,8 @@ class MyDocument extends Document {
             pageId="503018133206953"
             appId="225797349312699"
             // htmlRef={window.location.pathname}
-          />,
+          />
+
           <Main />
           <NextScript />
         </body>
