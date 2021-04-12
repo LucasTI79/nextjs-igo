@@ -165,7 +165,8 @@ export default function Home() {
       <div>
         <MessengerCustomerChat
           pageId="503018133206953"
-          // appId="<YOUR_APP_ID>"
+          appId="225797349312699"
+          htmlRef={window.location.pathname}
         />
       </div>
 
