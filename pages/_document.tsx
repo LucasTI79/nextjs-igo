@@ -33,7 +33,7 @@ class MyDocument extends Document {
            <MessengerCustomerChat
             pageId="503018133206953"
             appId="225797349312699"
-            htmlRef={window.location.pathname}
+            // htmlRef={window.location.pathname}
           />,
           <Main />
           <NextScript />
