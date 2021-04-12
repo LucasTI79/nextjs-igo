@@ -4,7 +4,7 @@ import { motion, Variants } from 'framer-motion'
 import GoogleMapReact from 'google-map-react';
 import ReactCardCarousel from "react-card-carousel";
 import Link from 'next/link';
-import MessengerCustomerChat from 'react-messenger-customer-chat'
+import FbCostumerChat from '../components/fbCostumerChat'
 interface CardProps {
   href: string
   imgSrc: string
@@ -161,15 +161,17 @@ export default function Home() {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.5 }}
     >
-
-      <div>
-        <MessengerCustomerChat
-          pageId="503018133206953"
-          appId="225797349312699"
-          htmlRef={window.location.pathname}
-        />
+      {/* <!-- Load Facebook SDK for JavaScript --> */}
+      <FbCostumerChat/>
+      {/* <!-- Your Chat Plugin code --> */}
+      <div id="fb-root"></div>
+      <div className="fb-customerchat"
+        attribution="install_email"
+        page_id="503018133206953"
+        theme_color="#44bec7"
+          logged_in_greeting="Ol&#xe1;! Como posso te ajudar?"
+          logged_out_greeting="Ol&#xe1;! Como posso te ajudar?">
       </div>
-
     <div className="vh-10 flex flex-row justify-center items-center bg-igo-300 mb-2">
           <Image width={24} height={24} src={'/svg/dental/037-tooth.svg'} />
           <h2 className="md:text-2xl text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">DICAS</h2>
