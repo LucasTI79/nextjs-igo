@@ -6,7 +6,7 @@ import '../styles/tailwind.css'
 import '../styles/globals.css'
 
 import Layout from '../components/Layout'
-import MessengerChat from '../Utils/MessengerChat'
+
 
 function MyApp({ Component, pageProps }) {
    return (
