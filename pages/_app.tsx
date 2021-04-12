@@ -16,12 +16,10 @@ function MyApp({ Component, pageProps }) {
           <title>IGO | Instituto Galindo de Odontologia</title>
         </Head>
         <Component {...pageProps} />
-
         <MessengerChat
           pageId="503018133206953"
           ref="fb-msgr"
         />
-
       </Layout>
     </AnimateSharedLayout>
   )
