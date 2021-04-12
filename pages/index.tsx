@@ -4,6 +4,7 @@ import { motion, Variants } from 'framer-motion'
 import GoogleMapReact from 'google-map-react';
 import ReactCardCarousel from "react-card-carousel";
 import Link from 'next/link';
+import MessengerCustomerChat from 'react-messenger-customer-chat'
 interface CardProps {
   href: string
   imgSrc: string
@@ -144,27 +145,10 @@ const Card: React.FC<CardProps> = ({ describe, imgSrc, href }) => (
 )
 
 export default function Home() {
-  React.useEffect(() => {
-    window.fbAsyncInit = function() {
-      FB.init({
-        xfbml            : true,
-        version          : 'v10.0'
-      })
-    };
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  },[])
   const handleWhell = e => {
     if(e.deltaY > 0) {
-      // console.log('scroll up',e.deltaY)
       e.target.scrollBy(300,0)
     }else {
-      // console.log('scroll down',e.deltaY)
       e.target.scrollBy(-300,0)
     }
   }
@@ -177,14 +161,14 @@ export default function Home() {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.5 }}
     >
-      {/* <!-- Load Facebook SDK for JavaScript --> */}
-      <div id="fb-root"></div>
-{/*
-      <!-- Your Chat Plugin code --> */}
-      <div className="fb-customerchat"
-        attribution="install_email"
-        page_id="503018133206953">
+
+      <div>
+        <MessengerCustomerChat
+          pageId="503018133206953"
+          // appId="<YOUR_APP_ID>"
+        />
       </div>
+
     <div className="vh-10 flex flex-row justify-center items-center bg-igo-300 mb-2">
           <Image width={24} height={24} src={'/svg/dental/037-tooth.svg'} />
           <h2 className="md:text-2xl text-xl text-white flex font-extrabold ml-2 flex-row justify-center ">DICAS</h2>
