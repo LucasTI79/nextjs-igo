@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import React from 'react'
-import MessengerChat from '../Utils/MessengerChat'
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
