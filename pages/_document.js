@@ -24,7 +24,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          <script dangerouslySetInnerHTML = {{
+          {/* <script dangerouslySetInnerHTML = {{
                         __html: `window.fbAsyncInit = function () {
                             FB.init ({
                                 xfbml: true,
@@ -39,7 +39,7 @@ class MyDocument extends Document {
                             js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
                             fjs.parentNode.insertBefore (js, fjs);
                            } (documento, 'script', 'facebook-jssdk')); `
-                    }} />
+                    }} /> */}
 
           <div
             className="fb-customerchat"
