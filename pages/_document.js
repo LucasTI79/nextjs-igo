@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import React from 'react'
-import MessengerCustomerChat from 'react-messenger-customer-chat';
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -25,15 +24,6 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          {/* <MessengerChat
-            pageId="503018133206953"
-            ref="fb-msgr"
-          /> */}
-           {/* <MessengerCustomerChat
-            pageId="503018133206953"
-            appId="225797349312699"
-            // htmlRef={window.location.pathname}
-          /> */}
           <script dangerouslySetInnerHTML = {{
                         __html: `window.fbAsyncInit = function () {
                             FB.init ({
