@@ -18,19 +18,19 @@ export function useFacebook(options, cb) {
      console.log('promise')
    } else {
      promise = new Promise(resolve => {
-       // https://developers.facebook.com/docs/javascript/reference/FB.init
-      //  window.fbAsyncInit = () => {
-      //    window.FB.init({
-      //      //appId: window.config.facebook.appId,
-      //      autoLogAppEvents: true,
-      //      status: true,
-      //      cookie: true,
-      //      xfbml: true,
-      //      version: 'v5.0',
-      //      ...options,
-      //    });
-      //    resolve(window.FB);
-      //  };
+       https://developers.facebook.com/docs/javascript/reference/FB.init
+       window.fbAsyncInit = () => {
+         window.FB.init({
+           //appId: window.config.facebook.appId,
+           autoLogAppEvents: true,
+           status: true,
+           cookie: true,
+           xfbml: true,
+           version: 'v5.0',
+           ...options,
+         });
+         resolve(window.FB);
+       };
 
        console.log('else promise')
 

@@ -15,7 +15,6 @@
    useFacebook({ xfbml: false }, FB => {
      if (timeoutRef.current !== null) {
        timeoutRef.current = setTimeout(() => {
-
        }, 2000);
      }
    });
