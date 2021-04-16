@@ -32,6 +32,8 @@ class MyDocument extends Document {
                                 });
                             };
 
+                            console.log('script body')
+
                             (função (d, s, id) {
                             var js, fjs = d.getElementsByTagName (s) [0];
                             if (d.getElementById (id)) retornar;
@@ -42,7 +44,7 @@ class MyDocument extends Document {
                     }} />
 
 
-          {/* <div
+          <div
             className="fb-customerchat"
             attribution="install_email"
             page_id="503018133206953"
@@ -50,7 +52,7 @@ class MyDocument extends Document {
             logged_in_greeting="Olá! Como posso te ajudar?"
             logged_out_greeting="Olá! Como posso te ajudar?">
           </div>
-          <div id = "fb-root"> </div> */}
+          <div id = "fb-root"> </div>
           <Main />
           <NextScript />
         </body>

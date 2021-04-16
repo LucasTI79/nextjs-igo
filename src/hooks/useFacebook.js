@@ -15,6 +15,7 @@ export function useFacebook(options, cb) {
  React.useEffect(() => {
    if (promise) {
      promise.then(cb);
+     console.log('promise')
    } else {
      promise = new Promise(resolve => {
        // https://developers.facebook.com/docs/javascript/reference/FB.init
@@ -30,6 +31,9 @@ export function useFacebook(options, cb) {
          });
          resolve(window.FB);
        };
+
+       console.log('else promise')
+
 
        const script = document.createElement('script');
        const isDebug = window.localStorage.getItem('fb:debug') === 'true';
