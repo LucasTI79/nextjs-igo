@@ -38,8 +38,7 @@ class MyDocument extends Document {
                             js = d.createElement (s); js.id = id;
                             js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
                             fjs.parentNode.insertBefore (js, fjs);
-                           } (documento, 'script', 'facebook-jssdk'));
-                           console.log('script')`
+                           } (documento, 'script', 'facebook-jssdk'));`
                     }} />
 
 
