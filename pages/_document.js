@@ -24,7 +24,25 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-           {/* <div
+          {/* <script dangerouslySetInnerHTML = {{
+                        __html: `window.fbAsyncInit = function () {
+                            FB.init ({
+                                xfbml: true,
+                                versão: 'v10.0'
+                                });
+                            };
+
+                            (função (d, s, id) {
+                            var js, fjs = d.getElementsByTagName (s) [0];
+                            if (d.getElementById (id)) retornar;
+                            js = d.createElement (s); js.id = id;
+                            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+                            fjs.parentNode.insertBefore (js, fjs);
+                           } (documento, 'script', 'facebook-jssdk')); `
+                    }} /> */}
+
+
+          <div
             className="fb-customerchat"
             attribution="install_email"
             page_id="503018133206953"
@@ -32,7 +50,7 @@ class MyDocument extends Document {
             logged_in_greeting="Olá! Como posso te ajudar?"
             logged_out_greeting="Olá! Como posso te ajudar?">
           </div>
-          <div id = "fb-root"> </div> */}
+          <div id = "fb-root"> </div>
           <Main />
           <NextScript />
         </body>
