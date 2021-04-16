@@ -32,8 +32,6 @@ class MyDocument extends Document {
                                 });
                             };
 
-                            console.log('script body')
-
                             (função (d, s, id) {
                             var js, fjs = d.getElementsByTagName (s) [0];
                             if (d.getElementById (id)) retornar;
