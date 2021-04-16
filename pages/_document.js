@@ -46,7 +46,7 @@ class MyDocument extends Document {
             className="fb-customerchat"
             attribution="install_email"
             page_id="503018133206953"
-            theme_color="#44bec7"
+            theme_color="#ff4514"
             logged_in_greeting="Olá! Como posso te ajudar?"
             logged_out_greeting="Olá! Como posso te ajudar?">
           </div>
