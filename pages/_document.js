@@ -7,12 +7,17 @@ class MyDocument extends Document {
     return { ...initialProps }
   }
   render() {
-    useFacebook({ xfbml: false }, FB => {
-      if (timeoutRef.current !== null) {
-        timeoutRef.current = setTimeout(() => {
-        }, 2000);
-      }
-    });
+      const timeoutRef = React.useRef();
+      // Initialize Facebook widget(s) in 2 seconds after
+      // the component is mounted.
+      useFacebook({ xfbml: false }, FB => {
+        if (timeoutRef.current !== null) {
+          timeoutRef.current = setTimeout(() => {
+          }, 2000);
+        }
+      });
+
+
     return (
       <Html>
         <Head>
