@@ -24,7 +24,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          <script dangerouslySetInnerHTML = {{
+          {/* <script dangerouslySetInnerHTML = {{
                         __html: `window.fbAsyncInit = function () {
                             FB.init ({
                                 xfbml: true,
@@ -32,15 +32,14 @@ class MyDocument extends Document {
                                 });
                             };
                             `
-
-                    }} />
+                    }} /> */}
 
 
           <div
             className="fb-customerchat"
             attribution="install_email"
             page_id="503018133206953"
-            theme_color="#ff4514"
+            theme_color="#44bec7"
             logged_in_greeting="Olá! Como posso te ajudar?"
             logged_out_greeting="Olá! Como posso te ajudar?">
           </div>

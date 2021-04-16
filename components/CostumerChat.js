@@ -15,18 +15,7 @@
    useFacebook({ xfbml: false }, FB => {
      if (timeoutRef.current !== null) {
        timeoutRef.current = setTimeout(() => {
-         const el = document.createElement('div');
-         el.className = 'fb-customerchat';
-         el.setAttribute('attribution', 'install_email');
-         el.setAttribute('page_id', '503018133206953');
-         el.setAttribute('theme_color', '#44be');
-         el.setAttribute('logged_in_greeting', 'Olá;! Como posso te ajudar?');
-         el.setAttribute('logged_out_greeting', 'Olá;! Como posso te ajudar?');
-         // el.setAttribute('pgreeting_dialog_display', '...');
-         // el.setAttribute('pgreeting_dialog_delay', '...');
-         // el.setAttribute('pminimized', 'false');
-         document.body.appendChild(el);
-         FB.XFBML.parse();
+
        }, 2000);
      }
    });
