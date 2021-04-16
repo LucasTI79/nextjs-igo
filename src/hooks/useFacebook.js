@@ -21,7 +21,7 @@ export function useFacebook(options, cb) {
         // https://developers.facebook.com/docs/javascript/reference/FB.init
         window.fbAsyncInit = () => {
           window.FB.init({
-            appId: window.config.facebook.appId,
+            //appId: window.config.facebook.appId,
             autoLogAppEvents: true,
             status: true,
             cookie: true,
