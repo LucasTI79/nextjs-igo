@@ -29,12 +29,37 @@ class MyDocument extends Document {
             pageId="503018133206953"
             ref="fb-msgr"
           /> */}
-           <MessengerCustomerChat
+           {/* <MessengerCustomerChat
             pageId="503018133206953"
             appId="225797349312699"
             // htmlRef={window.location.pathname}
-          />
+          /> */}
+          <script dangerouslySetInnerHTML = {{
+                        __html: `window.fbAsyncInit = function () {
+                            FB.init ({
+                                xfbml: true,
+                                versão: 'v10.0'
+                                });
+                            };
 
+                            (função (d, s, id) {
+                            var js, fjs = d.getElementsByTagName (s) [0];
+                            if (d.getElementById (id)) retornar;
+                            js = d.createElement (s); js.id = id;
+                            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+                            fjs.parentNode.insertBefore (js, fjs);
+                           } (documento, 'script', 'facebook-jssdk')); `
+                    }} />
+
+          <div
+            className="fb-customerchat"
+            attribution="install_email"
+            page_id="503018133206953"
+            theme_color="#44bec7"
+            logged_in_greeting="Ol&#xe1;! Como posso te ajudar?"
+            logged_out_greeting="Ol&#xe1;! Como posso te ajudar?">
+          </div>
+          <div id = "fb-root"> </div>
           <Main />
           <NextScript />
         </body>
