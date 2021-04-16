@@ -1,23 +1,12 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import React from 'react'
-import { useFacebook } from '../src/hooks/useFacebook'
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
+
   render() {
-      const timeoutRef = React.useRef();
-      // Initialize Facebook widget(s) in 2 seconds after
-      // the component is mounted.
-      useFacebook({ xfbml: false }, FB => {
-        if (timeoutRef.current !== null) {
-          timeoutRef.current = setTimeout(() => {
-          }, 2000);
-        }
-      });
-
-
     return (
       <Html>
         <Head>
