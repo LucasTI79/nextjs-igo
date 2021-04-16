@@ -24,7 +24,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          {/* <script dangerouslySetInnerHTML = {{
+          <script dangerouslySetInnerHTML = {{
                         __html: `window.fbAsyncInit = function () {
                             FB.init ({
                                 xfbml: true,
@@ -32,7 +32,7 @@ class MyDocument extends Document {
                                 });
                             };
                             `
-                    }} /> */}
+                    }} />
 
 
           <div
