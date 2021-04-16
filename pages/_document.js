@@ -38,7 +38,7 @@ class MyDocument extends Document {
                             js = d.createElement (s); js.id = id;
                             js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
                             fjs.parentNode.insertBefore (js, fjs);
-                           } (documento, 'script', 'facebook-jssdk'));`
+                           } (documento, 'script', 'facebook-jssdk')); `
                     }} />
 
 
@@ -46,7 +46,7 @@ class MyDocument extends Document {
             className="fb-customerchat"
             attribution="install_email"
             page_id="503018133206953"
-            theme_color="#f7a"
+            theme_color="#44bec7"
             logged_in_greeting="Olá! Como posso te ajudar?"
             logged_out_greeting="Olá! Como posso te ajudar?">
           </div>
