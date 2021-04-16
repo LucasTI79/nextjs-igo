@@ -56,8 +56,8 @@ class MyDocument extends Document {
             attribution="install_email"
             page_id="503018133206953"
             theme_color="#44bec7"
-            logged_in_greeting="Ol&#xe1;! Como posso te ajudar?"
-            logged_out_greeting="Ol&#xe1;! Como posso te ajudar?">
+            logged_in_greeting="Olá! Como posso te ajudar?"
+            logged_out_greeting="Olá! Como posso te ajudar?">
           </div>
           <div id = "fb-root"> </div>
           <Main />
