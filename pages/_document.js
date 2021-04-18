@@ -8,8 +8,12 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="pt-br">
         <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <meta name="author" content="Lucas Feitosa"/>
+          <meta name="description" content="Clínica odontológica que te ajuda a cudiar da saúde. Acesse para ver nossos tratamentos e dicas para se cuidar"/>
+          <meta name="keywords" content="dentista, clinico, implante, dtm, extração, ortodontia, metro, santana, tucuruvi, zona norte, são paulo" />
           <link rel="shortcut" href="/public/favicon.ico" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link

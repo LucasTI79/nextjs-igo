@@ -17,7 +17,6 @@ export function useFacebook(options, cb) {
      promise.then(cb);
    } else {
      promise = new Promise(resolve => {
-       https://developers.facebook.com/docs/javascript/reference/FB.init
        window.fbAsyncInit = () => {
          window.FB.init({
            //appId: window.config.facebook.appId,
@@ -31,7 +30,6 @@ export function useFacebook(options, cb) {
          resolve(window.FB);
        };
        const script = document.createElement('script');
-       const isDebug = window.localStorage.getItem('fb:debug') === 'true';
        script.src = `https://connect.facebook.net/pt_BR/sdk/xfbml.customerchat.js`; // prettier-ignore
        document.head.appendChild(script);
      });
